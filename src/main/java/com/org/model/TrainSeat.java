@@ -1,5 +1,6 @@
 package com.org.model;
 
+import com.org.utility.constants.BookingStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,21 +10,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Train {
-
+public class TrainSeat extends Seat{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long trainId;
-    private Long trainNum;
-    private Station arrival;
-    private Station departure;
-    private List<Seat> seats;
-
+    private Long trainSeatId;
+    private Long fare;
+    private BookingStatus bookingStatus;
 }

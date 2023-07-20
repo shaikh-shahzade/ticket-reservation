@@ -16,14 +16,14 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Train {
-
+public class Station {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long trainId;
-    private Long trainNum;
-    private Station arrival;
-    private Station departure;
-    private List<Seat> seats;
+    private Long stationId;
+    private String stationName;
+    private String address;
+    private String stationCode;
+
+    private List<Train> train;
 
 }

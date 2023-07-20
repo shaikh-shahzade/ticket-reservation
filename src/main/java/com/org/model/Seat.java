@@ -9,21 +9,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Train {
-
+public class Seat {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long trainId;
-    private Long trainNum;
-    private Station arrival;
-    private Station departure;
-    private List<Seat> seats;
-
+    private Long seatId;
+    private Long  seatNumber;
+    private String seatClass;
 }

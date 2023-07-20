@@ -1,5 +1,6 @@
 package com.org.model;
 
+import com.org.utility.constants.BookingStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,21 +10,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.List;
+import java.time.LocalDate;
+import java.util.Map;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Train {
-
+public class TrainReservation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long trainId;
-    private Long trainNum;
-    private Station arrival;
-    private Station departure;
-    private List<Seat> seats;
-
+    private Long reservationNum;
+    private TrainSchedule trainSchedule;
+    private Map<Customer,TrainSeat> bookedSeats;
+    private LocalDate bookingDate;
+    private BookingStatus bookingStatus;
 }
