@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -22,8 +19,11 @@ public class Train {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long trainId;
     private Long trainNum;
-    private Station arrival;
+    @ManyToOne(cascade = CascadeType.ALL)
     private Station departure;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Station arrival;
+    @OneToMany(cascade = CascadeType.ALL , mappedBy = "train")
     private List<Seat> seats;
 
 }
