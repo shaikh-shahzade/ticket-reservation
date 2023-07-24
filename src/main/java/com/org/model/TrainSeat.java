@@ -15,14 +15,12 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TrainSeat extends Seat{
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long trainSeatId;
+
     private Long fare;
     private BookingStatus bookingStatus;
     @ManyToOne(cascade = CascadeType.ALL)
-    private List<TrainSchedule> trainSchedule;
+    private TrainSchedule trainSchedule;
 
-    @OneToMany(cascade =CascadeType.ALL , mappedBy = "bookedSeats")
+    @ManyToOne(cascade =CascadeType.ALL)
     private TrainReservation trainReservation;
 }

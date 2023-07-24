@@ -25,6 +25,5 @@ public class TrainSchedule {
     private TrainStatus trainStatus;
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "trainSchedule")
     private List<TrainSeat> trainSeats;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "trainSchedule")
-    private List<TrainSchedule> trainSchedules;
+
 }

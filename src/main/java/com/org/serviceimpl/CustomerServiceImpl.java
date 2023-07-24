@@ -1,4 +1,5 @@
 package com.org.serviceimpl;
 
-public class CustomerServiceImpl {
+
+public class CustomerServiceImpl  {
 }

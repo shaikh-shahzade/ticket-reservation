@@ -27,7 +27,7 @@ public class TrainReservation {
     @OneToMany(cascade = CascadeType.ALL )
     @JoinTable(name = "customer_train_seat",
             joinColumns = {@JoinColumn(name = "reservation_id", referencedColumnName ="reservationId")},
-            inverseJoinColumns = {@JoinColumn(name = "train_seat", referencedColumnName = "trainSeatId")})
+            inverseJoinColumns = {@JoinColumn(name = "train_seat", referencedColumnName = "seatId")})
     @MapKeyJoinColumn(name = "customerId")
     private Map<Customer,TrainSeat> bookedSeats = new HashMap<Customer , TrainSeat>();
 
