@@ -4,36 +4,38 @@ import com.org.model.Train;
 import com.org.model.TrainSchedule;
 import com.org.service.TrainService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("train")
+@RestController
+@RequestMapping("train")
 public class TrainController {
     @Autowired
     private TrainService trainService;
 
-    @GetMapping()
+    @GetMapping
     public List<Train> getAllTrains()
     {
         return trainService.getAllTrains();
     }
-    @GetMapping("{id}")
+   @GetMapping("{id}")
     public Train getTrainById(@PathVariable Long id)
     {
         return trainService.getTrainById(id);
     }
-    @PostMapping()
+    @PostMapping
     public Train addTrain(@RequestBody Train train)
     {
         return trainService.addTrain(train);
     }
-    @PutMapping()
+    @PutMapping
     public Train updateTrainDetails(@RequestBody Train train)
     {
         return trainService.updateTrainDetails(train);
     }
-    @DeleteMapping()
+    @DeleteMapping
     public Train deleteTrain(@RequestBody Long id)
     {
         return trainService.deleteTrain(id);
