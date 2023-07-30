@@ -20,17 +20,17 @@ public class CustomerController {
     @GetMapping("{id}")
     public Customer getCustomer(@PathVariable Long id)
     {
-        return customerService.getCustomers(id);
+        return customerService.getCustomersById(id);
     }
     @PostMapping
     public Customer addCustomer(@RequestBody Customer customer)
     {
-        return customerService.getCustomers(id);
+        return customerService.addCustomers(customer);
     }
     @PutMapping
     public Customer updateCustomer(@RequestBody Customer customer)
     {
-        return customerService.updateCustomers(id);
+        return customerService.updateCustomers(customer);
     }
     @DeleteMapping
     public Customer deleteCustomer(@RequestBody Long id)
