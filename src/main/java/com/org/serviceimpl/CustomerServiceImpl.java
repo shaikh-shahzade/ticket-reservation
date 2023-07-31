@@ -18,21 +18,25 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer getCustomersById(Long id) {
-        return customerRepo.findBy(id).get();
+        return customerRepo.findById(id).get();
     }
 
     @Override
     public Customer addCustomers(Customer customer) {
-        return null;
+        Customer customerSaved = customerRepo.save(customer);
+        return customerSaved;
     }
 
     @Override
     public Customer updateCustomers(Customer customer) {
-        return null;
+        Customer customerSaved = customerRepo.save(customer);
+        return customerSaved;
     }
 
     @Override
     public Customer deleteCustomers(Long id) {
-        return null;
+        Customer customer = customerRepo.findById(id).get();
+        customerRepo.delete(customer);
+        return customer;
     }
 }
