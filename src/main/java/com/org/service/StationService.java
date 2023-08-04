@@ -13,5 +13,5 @@ public interface StationService {
 
     Station updateStation(Station station);
 
-    Station deleteStation(Station station);
+    Station deleteStation(Long id);
 }
